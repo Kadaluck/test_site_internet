@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Coucou mon ange</h1>
+        <h1>Welcome to My Website</h1>
         <form id="passwordForm">
             <label for="password">Enter Password:</label>
             <input type="password" id="password" name="password" required>
@@ -17,11 +17,17 @@
         <p id="error-message"></p>
     </div>
 
+    <!-- Ajout du lecteur audio -->
+    <audio id="background-music" autoplay loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         document.getElementById('passwordForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const password = document.getElementById('password').value;
-            const correctPassword = 'gaston'; // Change this to your desired password
+            const correctPassword = 'yourpassword'; // Change this to your desired password
 
             if (password === correctPassword) {
                 window.location.href = 'protected-page.html'; // Redirect to the protected page
@@ -30,12 +36,5 @@
             }
         });
     </script>
-
-    <!-- Ajout du lecteur audio -->
-    <audio id="background-music" autoplay loop>
-        <source src="undertale.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
 </body>
 </html>
