@@ -14,16 +14,23 @@
             <input type="password" id="password" name="password" required>
             <button type="submit">Submit</button>
         </form>
+        <button id="playMusicButton">Play Music</button>
         <p id="error-message"></p>
     </div>
 
     <!-- Ajout du lecteur audio -->
-    <audio id="background-music" autoplay loop>
-        <source src="background-music.mp3" type="audio/mpeg">
+    <audio id="background-music" loop>
+        <source src="undertale.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <script>
+        document.getElementById('playMusicButton').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play();
+            this.style.display = 'none'; // Cache le bouton après avoir cliqué
+        });
+
         document.getElementById('passwordForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const password = document.getElementById('password').value;
