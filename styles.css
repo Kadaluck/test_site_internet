@@ -60,42 +60,28 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Styles pour la galerie d'images en plein écran */
 .gallery {
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    margin: 0;
+    gap: 20px;
 }
 
 .image-container {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 500px;
 }
 
 .image-container img {
     width: 100%;
-    height: auto;
-}
-
-.image-container img.portrait {
-    height: 100%;
-    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
     .image-container {
-        width: 100%;
+        width: 45%;
     }
 }
 
