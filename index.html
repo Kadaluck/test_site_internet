@@ -24,6 +24,12 @@
         Your browser does not support the audio element.
     </audio>
 
+    <!-- Ajout du son pour mot de passe correct -->
+    <audio id="success-sound">
+        <source src="success-sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         document.getElementById('playMusicButton').addEventListener('click', function() {
             const audio = document.getElementById('background-music');
@@ -37,7 +43,11 @@
             const correctPassword = 'gaston'; // Change this to your desired password
 
             if (password === correctPassword) {
-                window.location.href = 'protected-page.html'; // Redirect to the protected page
+                const successSound = document.getElementById('success-sound');
+                successSound.play();
+                setTimeout(function() {
+                    window.location.href = 'protected-page.html'; // Redirect to the protected page
+                }, 2000); // Delay the redirect to allow the sound to play
             } else {
                 document.getElementById('error-message').textContent = 'Incorrect password. Please try again.';
             }
