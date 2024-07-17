@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Coucou mon ange</h1>
+        <form id="passwordForm">
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            const correctPassword = 'gaston'; // Change this to your desired password
+
+            if (password === correctPassword) {
+                window.location.href = 'protected-page.html'; // Redirect to the protected page
+            } else {
+                document.getElementById('error-message').textContent = 'Incorrect password. Please try again.';
+            }
+        });
+    </script>
+
+    <!-- Ajout du lecteur audio -->
+    <audio id="background-music" autoplay loop>
+        <source src="undertale.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+</html>
