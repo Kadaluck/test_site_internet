@@ -8,25 +8,34 @@
 </head>
 <body>
     <div class="container">
-        <h1>Surprise mon ange <3</h1>
+        <h1>Welcome to the Protected Page</h1>
+        <button id="playMusicButton">Play Music</button>
         <div class="gallery">
             <div class="image-container">
-                <img src="image1.JPG" alt="Image 1">
+                <img src="image1.jpg" alt="Image 1">
             </div>
             <div class="image-container">
-                <img src="image2.JPG" alt="Image 2">
+                <img src="image2.jpg" alt="Image 2">
             </div>
             <div class="image-container">
-                <img src="image3.JPG" alt="Image 3">
+                <img src="image3.jpg" alt="Image 3">
             </div>
             <!-- Ajoutez plus de divs .image-container pour plus d'images -->
         </div>
     </div>
 
     <!-- Ajout du lecteur audio -->
-    <audio id="background-music" autoplay loop>
+    <audio id="background-music" loop>
         <source src="background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <script>
+        document.getElementById('playMusicButton').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play();
+            this.style.display = 'none'; // Cache le bouton après avoir cliqué
+        });
+    </script>
 </body>
 </html>
