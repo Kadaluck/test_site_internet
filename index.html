@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected Homepage</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Triforce&display=swap">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Website</h1>
+        <h1>YAHAHA ! Tu m'as trouvé !</h1>
         <form id="passwordForm">
-            <label for="password">Enter Password:</label>
+            <label for="password">Mystère mystère...:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Submit</button>
+            <button type="submit" id="triforceButton">
+                <img src="https://i.ibb.co/YykbhP5/triforce.png" alt="triforce" border="0">
+            </button>
         </form>
-        <button id="playMusicButton">Play Music</button>
+        <button id="playMusicButton">Musique Maestro !</button>
         <p id="error-message"></p>
     </div>
 
     <!-- Ajout du lecteur audio -->
     <audio id="background-music" loop>
-        <source src="undertale.mp3" type="audio/mpeg">
+        <source src="zelda_fairy.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -30,9 +33,16 @@
         Your browser does not support the audio element.
     </audio>
 
+    <!-- Ajout du son pour mot de passe incorrect -->
+    <audio id="error-sound">
+        <source src="error-sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         document.getElementById('playMusicButton').addEventListener('click', function() {
             const audio = document.getElementById('background-music');
+            audio.volume = 0.2; // Réglez le volume de la musique de fond (0.0 à 1.0)
             audio.play();
             this.style.display = 'none'; // Cache le bouton après avoir cliqué
         });
@@ -49,6 +59,8 @@
                     window.location.href = 'protected-page.html'; // Redirect to the protected page
                 }, 2000); // Delay the redirect to allow the sound to play
             } else {
+                const errorSound = document.getElementById('error-sound');
+                errorSound.play();
                 document.getElementById('error-message').textContent = 'Incorrect password. Please try again.';
             }
         });

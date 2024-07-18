@@ -1,26 +1,32 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Triforce', sans-serif;
+    background-image: url('https://r4.wallpaperflare.com/wallpaper/702/11/743/artwork-digital-art-link-the-legend-of-zelda-wallpaper-297068fd118a8d6b5687f8cfc041d6fd.jpg'); /* Image de fond */
+    background-size: cover; /* L'image couvre toute la page */
+    background-attachment: fixed; /* L'image reste fixe lors du défilement */
+    background-position: center; /* Centre l'image de fond */
+    color: #f5deb3; /* Couleur beige pour le texte */
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    margin: 0;
 }
 
 .container {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     text-align: center;
     width: 80%;
     max-width: 1200px;
+    margin: 20px;
 }
 
 h1 {
     margin-bottom: 20px;
+    color: #1a4d1a; /* Couleur verte sombre */
 }
 
 form {
@@ -32,6 +38,7 @@ form {
 label {
     margin-bottom: 10px;
     font-weight: bold;
+    color: #1a4d1a;
 }
 
 input[type="password"] {
@@ -40,19 +47,38 @@ input[type="password"] {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #e6e6e6;
+}
+
+#triforceButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#triforceButton img {
+    width: 150px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#triforceButton:hover img {
+    transform: scale(1.1); /* Effet de zoom au survol */
 }
 
 button {
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #d4af37; /* Couleur dorée */
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #b8860b; /* Couleur dorée plus foncée */
 }
 
 #error-message {
@@ -91,7 +117,6 @@ button:hover {
     }
 }
 
-
 #playMusicButton {
     padding: 10px 20px;
     background-color: #28a745;
@@ -100,6 +125,7 @@ button:hover {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 #playMusicButton:hover {
